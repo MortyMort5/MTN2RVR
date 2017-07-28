@@ -13,6 +13,7 @@
 		81D4522E1F1ED0F800F4D32E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D4522C1F1ED0F800F4D32E /* LaunchScreen.storyboard */; };
 		81D452391F1ED0F800F4D32E /* MTN2RVRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D452381F1ED0F800F4D32E /* MTN2RVRTests.swift */; };
 		81D452441F1ED0F800F4D32E /* MTN2RVRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D452431F1ED0F800F4D32E /* MTN2RVRUITests.swift */; };
+		81FA7E411F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81FA7E3F1F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		81D4523F1F1ED0F800F4D32E /* MTN2RVRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTN2RVRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D452431F1ED0F800F4D32E /* MTN2RVRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTN2RVRUITests.swift; sourceTree = "<group>"; };
 		81D452451F1ED0F800F4D32E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81FA7E401F2ACA3F001F5E49 /* MTN2RVR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTN2RVR.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		81D452511F1ED10F00F4D32E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81FA7E3F1F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D452241F1ED0F800F4D32E /* AppDelegate.swift in Sources */,
+				81FA7E411F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +572,7 @@
 				81D4524A1F1ED0F800F4D32E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81D4524B1F1ED0F800F4D32E /* Build configuration list for PBXNativeTarget "MTN2RVRTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +581,7 @@
 				81D4524D1F1ED0F800F4D32E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81D4524E1F1ED0F800F4D32E /* Build configuration list for PBXNativeTarget "MTN2RVRUITests" */ = {
 			isa = XCConfigurationList;
@@ -584,8 +590,22 @@
 				81D452501F1ED0F800F4D32E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81FA7E3F1F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81FA7E401F2ACA3F001F5E49 /* MTN2RVR.xcdatamodel */,
+			);
+			currentVersion = 81FA7E401F2ACA3F001F5E49 /* MTN2RVR.xcdatamodel */;
+			path = MTN2RVR.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 81D452181F1ED0F800F4D32E /* Project object */;
 }
