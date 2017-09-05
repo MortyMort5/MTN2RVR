@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816B8C891F5E3F0D0076DE07 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B8C881F5E3F0D0076DE07 /* CoreDataStack.swift */; };
+		816B8C8B1F5E3F560076DE07 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B8C8A1F5E3F560076DE07 /* User+Convenience.swift */; };
+		816B8C8D1F5E41410076DE07 /* Journal+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B8C8C1F5E41410076DE07 /* Journal+Convenience.swift */; };
+		816B8C991F5E46980076DE07 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B8C981F5E46980076DE07 /* UserController.swift */; };
+		816B8C9B1F5E46A30076DE07 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B8C9A1F5E46A30076DE07 /* JournalController.swift */; };
 		81D452241F1ED0F800F4D32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D452231F1ED0F800F4D32E /* AppDelegate.swift */; };
 		81D452291F1ED0F800F4D32E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D452271F1ED0F800F4D32E /* Main.storyboard */; };
 		81D4522B1F1ED0F800F4D32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D4522A1F1ED0F800F4D32E /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		816B8C881F5E3F0D0076DE07 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		816B8C8A1F5E3F560076DE07 /* User+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		816B8C8C1F5E41410076DE07 /* Journal+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Journal+Convenience.swift"; sourceTree = "<group>"; };
+		816B8C981F5E46980076DE07 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		816B8C9A1F5E46A30076DE07 /* JournalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		81D452201F1ED0F800F4D32E /* MTN2RVR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTN2RVR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D452231F1ED0F800F4D32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81D452281F1ED0F800F4D32E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				81FA7E3F1F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld */,
+				816B8C881F5E3F0D0076DE07 /* CoreDataStack.swift */,
+				816B8C8A1F5E3F560076DE07 /* User+Convenience.swift */,
+				816B8C8C1F5E41410076DE07 /* Journal+Convenience.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -138,6 +151,8 @@
 		81D452521F1ED11300F4D32E /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				816B8C981F5E46980076DE07 /* UserController.swift */,
+				816B8C9A1F5E46A30076DE07 /* JournalController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -318,8 +333,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816B8C991F5E46980076DE07 /* UserController.swift in Sources */,
+				816B8C891F5E3F0D0076DE07 /* CoreDataStack.swift in Sources */,
 				81D452241F1ED0F800F4D32E /* AppDelegate.swift in Sources */,
+				816B8C9B1F5E46A30076DE07 /* JournalController.swift in Sources */,
 				81FA7E411F2ACA3F001F5E49 /* MTN2RVR.xcdatamodeld in Sources */,
+				816B8C8D1F5E41410076DE07 /* Journal+Convenience.swift in Sources */,
+				816B8C8B1F5E3F560076DE07 /* User+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
