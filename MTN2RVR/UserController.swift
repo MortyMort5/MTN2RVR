@@ -12,7 +12,7 @@ import CoreData
 class UserController {
     static let shared = UserController()
 
-    
+
 
     func saveToPersistentStore() {
         let moc = CoreDataStack.context
