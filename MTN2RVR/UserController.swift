@@ -12,7 +12,9 @@ import CoreData
 class UserController {
     static let shared = UserController()
 
+    func createUser(firstName: String, lastName: String, email: String, username: String, uuid: String, profilePicture: Data) {
 
+    }
 
     func saveToPersistentStore() {
         let moc = CoreDataStack.context

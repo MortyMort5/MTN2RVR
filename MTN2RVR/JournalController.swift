@@ -26,7 +26,6 @@ class JournalController {
         if let moc = journal.managedObjectContext {
             moc.delete(journal)
             UserController.shared.saveToPersistentStore()
-            
         }
     }
 }
