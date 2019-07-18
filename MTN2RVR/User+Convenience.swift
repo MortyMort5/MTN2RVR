@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 extension User {
-    @discardableResult convenience init(email: String, firstName: String, lastName: String, profileImage: NSData, userName: String, uuid: String, journals: Journal, context: NSManagedObjectContext = CoreDataStack.context) {
+    @discardableResult convenience init(email: String, firstName: String, lastName: String, profileImage: Data, userName: String, uuid: String, journals: Journal, context: NSManagedObjectContext = Stack.context) {
         self.init(context: context)
         self.email = email
         self.firstName = firstName

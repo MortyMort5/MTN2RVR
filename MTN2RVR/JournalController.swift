@@ -14,11 +14,13 @@ class JournalController {
 
     var journals: [Journal] {
         let request: NSFetchRequest<Journal> = Journal.fetchRequest()
-        return (try? CoreDataStack.context.fetch(request)) ?? []
+        return (try? Stack.context.fetch(request)) ?? []
     }
 
-    func create(journalWithCityName cityName: String, creationDate: Date, journalType: String, location: NSData, name: String, notes: String, onFire: String, riverLevel: String, stateName: String, tempurature: Int32, waterColor: String, waterSpeed: String, workingFlies: String, user: User) {
-        let _ = Journal(cityName: cityName, creationDate: creationDate, journalType: journalType, location: location, name: name, notes: notes, onFire: onFire, riverLevel: riverLevel, stateName: stateName, temperature: tempurature, waterColor: waterColor, waterSpeed: waterSpeed, workingFlies: workingFlies, user: user)
+    func create(cityName: String, latitude: Double, longitude: Double, name: String, notes: String, onFire: Int, riverLevel: String, stateName: String, tempurature: Int, waterColor: String, waterSpeed: Int, workingFlies: [String]) {
+        
+        let _ = Journal(cityName: cityName, latitude: latitude, longitude: longitude, name: name, notes: notes, onFire: onFire, riverLevel: riverLevel, stateName: stateName, temperature: tempurature, waterColor: waterColor, waterSpeed: waterSpeed, workingFlies: workingFlies)
+        
         UserController.shared.saveToPersistentStore()
     }
 

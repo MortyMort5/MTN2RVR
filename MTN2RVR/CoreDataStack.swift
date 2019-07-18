@@ -9,15 +9,17 @@
 import Foundation
 import CoreData
 
-enum CoreDataStack {
+enum Stack {
 
-    static let container: NSPersistentContainer =  {
-        let container = NSPersistentContainer(name: "MTN2RVR")
-        container.loadPersistentStores(completionHandler: {(storeDescription, error) in
+    static let container: NSPersistentContainer = {
+        
+        let appName = Bundle.main.object(forInfoDictionaryKey: (kCFBundleNameKey as String)) as! String
+        let container = NSPersistentContainer(name: appName)
+        container.loadPersistentStores() { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Error loading persistent stores: \(error.userInfo)")
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         return container
     }()
 

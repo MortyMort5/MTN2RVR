@@ -17,7 +17,7 @@ class UserController {
     }
 
     func saveToPersistentStore() {
-        let moc = CoreDataStack.context
+        let moc = Stack.context
         do {
             try moc.save()
         } catch let error {

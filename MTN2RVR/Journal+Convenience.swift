@@ -10,21 +10,20 @@ import Foundation
 import CoreData
 
 extension Journal {
-    @discardableResult convenience init(cityName: String, creationDate: Date = Date(), journalType: String = "Fishing", location: NSData, name: String, notes: String, onFire: String, riverLevel: String, stateName: String, temperature: Int32, waterColor: String, waterSpeed: String, workingFlies: String, user: User, context: NSManagedObjectContext = CoreDataStack.context) {
+    @discardableResult convenience init(cityName: String, timestamp: Date = Date(), latitude: Double, longitude: Double, name: String, notes: String, onFire: Int, riverLevel: String, stateName: String, temperature: Int, waterColor: String, waterSpeed: Int, workingFlies: [String], context: NSManagedObjectContext = Stack.context) {
         self.init(context: context)
         self.cityName = cityName
-        self.creationDate = creationDate as NSDate
-        self.journalType = journalType
-        self.location = location
+        self.timestamp = timestamp
+        self.latitude = latitude
+        self.longitude = longitude
         self.name = name
         self.notes = notes
-        self.onFire = onFire
+        self.onFire = Int32(onFire)
         self.riverLevel = riverLevel
         self.stateName = stateName
-        self.temperature = temperature
+        self.temperature = Int32(temperature)
         self.waterColor = waterColor
-        self.waterSpeed = waterSpeed
-        self.workingFlies = workingFlies
-        self.user = user
+        self.waterSpeed = Int32(waterSpeed)
+        self.workingFlies = workingFlies as NSArray
     }
 }

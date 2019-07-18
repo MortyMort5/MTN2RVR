@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xGb-vU-ok3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lDk-oG-kVb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Journals View Controller-->
         <scene sceneID="SdL-YV-v3Y">
             <objects>
-                <viewController id="xGb-vU-ok3" sceneMemberID="viewController">
+                <viewController id="xGb-vU-ok3" customClass="JournalsViewController" customModule="MTN2RVR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="86J-de-99m"/>
                         <viewControllerLayoutGuide type="bottom" id="Jfg-J5-Ip6"/>
@@ -25,23 +25,204 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="576"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="Eua-HQ-ock">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="107"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eua-HQ-ock" id="95J-oM-zBw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <sections/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuG-h7-ag4">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addJournalButtonTapped:" destination="xGb-vU-ok3" eventType="touchUpInside" id="9kS-Zv-jcQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HuG-h7-ag4" firstAttribute="top" secondItem="86J-de-99m" secondAttribute="bottom" id="9je-Lc-91w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HuG-h7-ag4" secondAttribute="trailing" id="j0v-6K-22x"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="apw-1d-Bcj"/>
+                    <connections>
+                        <outlet property="tableView" destination="nKU-nr-aYx" id="YZ6-uv-Pea"/>
+                        <segue destination="lDk-oG-kVb" kind="show" identifier="addJournalSegue" id="Tvz-iB-GRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fU6-4b-0lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="131.78410794602701"/>
+        </scene>
+        <!--Add Journal View Controller-->
+        <scene sceneID="46W-TW-9kV">
+            <objects>
+                <viewController id="lDk-oG-kVb" customClass="AddJournalViewController" customModule="MTN2RVR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5hJ-JP-0ZY"/>
+                        <viewControllerLayoutGuide type="bottom" id="s5I-gx-DtQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4lt-Mx-v7R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awZ-m8-3sd">
+                                <rect key="frame" x="5" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="lDk-oG-kVb" eventType="touchUpInside" id="XJH-om-yRf"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kC1-b2-xJb">
+                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1le-d0-1Ht">
+                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stateName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoV-1e-jzB">
+                                        <rect key="frame" x="0.0" y="22.5" width="83.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL7-P6-yb3">
+                                        <rect key="frame" x="0.0" y="45" width="72" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-ZK-JVD">
+                                        <rect key="frame" x="0.0" y="67.5" width="57.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tempurature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV5-gW-bt4">
+                                        <rect key="frame" x="0.0" y="90" width="94.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WId-lj-bTo">
+                                        <rect key="frame" x="0.0" y="112.5" width="375" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="TFl-F1-qda"/>
+                                        </constraints>
+                                    </mapView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Journal Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-e8-OMg">
+                                        <rect key="frame" x="0.0" y="242.5" width="110.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="River Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfC-wP-Twc">
+                                        <rect key="frame" x="0.0" y="274.5" width="95" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GU0-NA-hVY">
+                                        <rect key="frame" x="0.0" y="306.5" width="131" height="29"/>
+                                        <segments>
+                                            <segment title="Fire"/>
+                                            <segment title="Ok"/>
+                                            <segment title="Slow"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onFireIndexChanged:" destination="lDk-oG-kVb" eventType="valueChanged" id="aIA-eP-NkF"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3QL-bh-G8H">
+                                        <rect key="frame" x="0.0" y="336.5" width="314" height="29"/>
+                                        <segments>
+                                            <segment title="Fast Waters"/>
+                                            <segment title="Normal Waters"/>
+                                            <segment title="Low Waters"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="waterSpeedIndexChanged:" destination="lDk-oG-kVb" eventType="valueChanged" id="Emr-dZ-Gla"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PV9-SV-bE6">
+                                        <rect key="frame" x="0.0" y="366.5" width="287" height="29"/>
+                                        <segments>
+                                            <segment title="Clean Waters"/>
+                                            <segment title="Mercy Water"/>
+                                            <segment title="Dirty Water"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="waterColorIndexChanged:" destination="lDk-oG-kVb" eventType="valueChanged" id="mYq-6w-KcQ"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tpQ-zn-SoT">
+                                        <rect key="frame" x="0.0" y="396.5" width="176" height="29"/>
+                                        <segments>
+                                            <segment title="High"/>
+                                            <segment title="Normal"/>
+                                            <segment title="Low"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="waterLevelIndexChanged:" destination="lDk-oG-kVb" eventType="valueChanged" id="2uj-Ec-fxl"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="laR-be-tbz">
+                                        <rect key="frame" x="0.0" y="426.5" width="277" height="73.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="00Y-jA-LSG"/>
+                                    <constraint firstItem="WId-lj-bTo" firstAttribute="leading" secondItem="kC1-b2-xJb" secondAttribute="leading" id="QnP-uq-HiS"/>
+                                    <constraint firstAttribute="trailing" secondItem="WId-lj-bTo" secondAttribute="trailing" id="YHe-IT-xmo"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s5I-gx-DtQ" firstAttribute="top" secondItem="kC1-b2-xJb" secondAttribute="bottom" id="3Q0-mZ-FWe"/>
+                            <constraint firstAttribute="trailing" secondItem="kC1-b2-xJb" secondAttribute="trailing" id="CJk-4Z-WPW"/>
+                            <constraint firstItem="awZ-m8-3sd" firstAttribute="leading" secondItem="4lt-Mx-v7R" secondAttribute="leading" constant="5" id="Urf-av-QNz"/>
+                            <constraint firstItem="awZ-m8-3sd" firstAttribute="top" secondItem="5hJ-JP-0ZY" secondAttribute="bottom" id="Vp9-6Q-2PR"/>
+                            <constraint firstItem="kC1-b2-xJb" firstAttribute="leading" secondItem="4lt-Mx-v7R" secondAttribute="leading" id="xnT-bZ-9Bv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="1le-d0-1Ht" id="pEo-46-xFg"/>
+                        <outlet property="journalNameTextField" destination="vEP-e8-OMg" id="WSd-Wd-sxe"/>
+                        <outlet property="latitudeLabel" destination="Nn5-ZK-JVD" id="xNP-Bl-sSm"/>
+                        <outlet property="longitudeLabel" destination="gL7-P6-yb3" id="0Uf-IH-tqa"/>
+                        <outlet property="mapView" destination="WId-lj-bTo" id="CyC-5m-fLe"/>
+                        <outlet property="notesTextView" destination="laR-be-tbz" id="eyw-QC-YjY"/>
+                        <outlet property="onFireSegmentControl" destination="GU0-NA-hVY" id="4wL-kh-HEM"/>
+                        <outlet property="riverLevelSegmentControl" destination="tpQ-zn-SoT" id="Quj-Wa-Nu8"/>
+                        <outlet property="riverNameTextField" destination="EfC-wP-Twc" id="r5s-eG-Y0q"/>
+                        <outlet property="stateNameLabel" destination="OoV-1e-jzB" id="DwB-Tx-Jkf"/>
+                        <outlet property="temperatureLabel" destination="XV5-gW-bt4" id="eAu-aO-slF"/>
+                        <outlet property="waterColorSegmentControl" destination="PV9-SV-bE6" id="Hdr-Tv-Og3"/>
+                        <outlet property="waterSpeedSegmentControl" destination="3QL-bh-G8H" id="Ud1-Wr-xd5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHw-Eu-7cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.8" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RWH-qP-hXk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="szc-0r-BbE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MNP-6u-JbY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xGb-vU-ok3" kind="relationship" relationship="rootViewController" id="2SU-By-I3E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7d-Lr-oyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="131.78410794602701"/>
         </scene>
